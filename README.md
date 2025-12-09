@@ -165,23 +165,13 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000
 
 **NOTE:** Please make sure to keep your API keys and configuration values secure and do not expose them publicly.
 
-## :camera: Screenshots
 
-![Modern UI/UX](/.github/images/img1.png "Modern UI/UX")
-
-![Upcoming Meetings](/.github/images/img2.png "Upcoming Meetings")
-
-![Live Audio/Video Call](/.github/images/img3.png "Live Audio/Video Call")
-
-![View Recordings](/.github/images/img4.png "View Recordings")
 
 ## :gear: Tech Stack
 
 [![React JS](https://skillicons.dev/icons?i=react "React JS")](https://react.dev/ "React JS") [![Next JS](https://skillicons.dev/icons?i=next "Next JS")](https://nextjs.org/ "Next JS") [![Typescript](https://skillicons.dev/icons?i=ts "Typescript")](https://www.typescriptlang.org/ "Typescript") [![Tailwind CSS](https://skillicons.dev/icons?i=tailwind "Tailwind CSS")](https://tailwindcss.com/ "Tailwind CSS") [![Vercel](https://skillicons.dev/icons?i=vercel "Vercel")](https://vercel.app/ "Vercel")
 
-## :wrench: Stats
 
-[![Stats for Yoom](/.github/images/stats.svg "Stats for Yoom")](https://pagespeed.web.dev/analysis?url=https://clone-yoom.netlify.app "Stats for Yoom")
 
 
 ## :raised_hands: Contribute
