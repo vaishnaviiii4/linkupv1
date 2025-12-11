@@ -1,8 +1,11 @@
 import type { PropsWithChildren } from "react";
 
 import { StreamClientProvider } from "@/providers/stream-client-provider";
+import { syncCurrentUserToDb } from "@/actions/user.actions";
 
-const RootLayout = ({ children }: PropsWithChildren) => {
+const RootLayout = async ({ children }: PropsWithChildren) => {
+  await syncCurrentUserToDb();
+
   return (
     <main>
       <StreamClientProvider>{children}</StreamClientProvider>

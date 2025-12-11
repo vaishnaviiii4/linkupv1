@@ -67,6 +67,17 @@ export const MeetingTypeList = () => {
         },
       });
 
+      // Persist meeting metadata in MongoDB
+      await fetch("/api/meetings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          callId: call.id,
+          startsAt,
+          description,
+        }),
+      });
+
       setCallDetails(call);
 
       if (!values?.description) {
