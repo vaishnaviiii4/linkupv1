@@ -18,16 +18,33 @@ if (!cached) {
 }
 
 export const connectToDatabase = async () => {
-  if (cached?.conn) return cached.conn;
+  if (cached?.conn) {
+    console.log("✅ MongoDB: Using cached connection");
+    return cached.conn;
+  }
 
   if (!cached?.promise) {
+    console.log("🔄 MongoDB: Attempting to connect...");
     cached!.promise = mongoose
       .connect(MONGODB_URI as string, {
         bufferCommands: false,
       })
-      .then((mongooseInstance) => mongooseInstance);
+      .then((mongooseInstance) => {
+        console.log("✅ MongoDB: Successfully connected!");
+        return mongooseInstance;
+      })
+      .catch((error) => {
+        console.error("❌ MongoDB: Connection failed:", error.message);
+        throw error;
+      });
   }
 
-  cached!.conn = await cached!.promise;
-  return cached!.conn;
+  try {
+    cached!.conn = await cached!.promise;
+    console.log("✅ MongoDB: Connection established and cached");
+    return cached!.conn;
+  } catch (error) {
+    console.error("❌ MongoDB: Failed to establish connection:", error.message);
+    throw error;
+  }
 };
